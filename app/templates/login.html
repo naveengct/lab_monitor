@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1>Hello Students!</h1>
+{{info}}<br><br>
+<form action="/access/" method="post">
+    {% csrf_token %}
+    <label for="your_no">Enter the provided Password: </label><br><br>
+    <input id="your_no" type="text" name="password" ><br><br>
+    <input type="submit" value="OK">
+</form>
+<a href="/home/">Student register</a><br><br>
+<a href="/register/">System register</a>
+{% endblock %}  

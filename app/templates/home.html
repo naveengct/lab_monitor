@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1>Hello Students!</h1>
+<form action="/details/" method="post">
+    {% csrf_token %}
+    {{info}}<br><br>
+    <label for="your_no">Your Roll Number: </label><br><br>
+    <input id="your_no" type="text" name="id" ><br><br>
+    <input type="submit" value="OK">
+</form>
+<a href="/login/">Student entry</a><br><br>
+<a href="/register/">System register</a>
+{% endblock %}  
