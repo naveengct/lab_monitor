@@ -11,7 +11,12 @@ from django.shortcuts import redirect
 def hello(request):
     return redirect('/home/')
 def home(request):
-    return render(request, 'home.html', {})
+    import socket    
+    hostname = socket.gethostname()    
+    IPAddr = socket.gethostbyname(hostname)    
+    print("Your Computer Name is:" + hostname)    
+    print("Your Computer IP Address is:" + IPAddr)    
+    return render(request, 'home.html', {'info':IPAddr})
 def login(request):
     return render(request, 'login.html', {})
 def register(request):
