@@ -1,1 +1,1 @@
-web: gunicorn hellojeeva.wsgi
+web: gunicorn hellojeeva.wsgi --log-file -
