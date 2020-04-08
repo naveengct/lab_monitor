@@ -6,7 +6,10 @@ import re,uuid
 from datetime import datetime
 from django.http import HttpResponse
 import socket
+from django.shortcuts import redirect
 # Create your views here.
+def hello(request):
+    return redirect('/home/')
 def home(request):
     return render(request, 'home.html', {})
 def login(request):

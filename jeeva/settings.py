@@ -132,4 +132,4 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.GzipManifestStaticFilesStorage'
 
 
-ALLOWED_HOSTS = ['hellojeeva.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','hellojeeva.herokuapp.com']
