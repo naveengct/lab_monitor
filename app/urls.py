@@ -10,4 +10,5 @@ urlpatterns = [
       path('register/',views.register,name='register'),
       path('insert_data/',views.insert_data,name='insert_data'),
       path('logout/',views.denied,name="denied"),
+     path('mac/',views.mac),
 ]

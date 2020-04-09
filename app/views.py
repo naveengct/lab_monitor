@@ -7,6 +7,8 @@ from datetime import datetime
 from django.http import HttpResponse
 import socket
 from django.shortcuts import redirect
+import sys
+from subprocess import run,PIPE
 # Create your views here.
 def hello(request):
     return redirect('/home/')
@@ -170,3 +172,7 @@ def denied(request):
     mycursor.close()
     mydb.close()
     return response  
+def mac(request):
+    out=run([sys.executable,"C:\hi.py"],shell=False,stdout=PIPE)
+    print(out)
+    return HttpResponse(out)
