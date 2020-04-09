@@ -11,14 +11,9 @@ import sys
 from subprocess import run,PIPE
 # Create your views here.
 def hello(request):
-    return redirect('/home/')
-def home(request):
-    import socket    
-    hostname = socket.gethostname()    
-    IPAddr = socket.gethostbyname(hostname)    
-    print("Your Computer Name is:" + hostname)    
-    print("Your Computer IP Address is:" + IPAddr)    
-    return render(request, 'home.html', {'info':IPAddr})
+    return redirect('/login/')
+def home(request):   
+    return render(request, 'home.html', )
 def login(request):
     return render(request, 'login.html', {})
 def register(request):
@@ -173,6 +168,6 @@ def denied(request):
     mydb.close()
     return response  
 def mac(request):
-    out=run([sys.executable,"C:\hi.py"],shell=False,stdout=PIPE)
+    out=run([sys.executable,"C:\hi1.py"],shell=False,stdout=PIPE)
     print(out)
     return HttpResponse(out)
