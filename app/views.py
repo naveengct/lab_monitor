@@ -168,6 +168,19 @@ def denied(request):
     mydb.close()
     return response  
 def mac(request):
-    out=run([sys.executable,"C:\hi1.py"],shell=False,stdout=PIPE)
-    print(out)
-    return HttpResponse(out)
+    mydb = mysql.connector.connect(
+    host="remotemysql.com",
+    user="hDGTaXLeeQ",
+    passwd="PQkVWwUhEt",
+    database="hDGTaXLeeQ"
+    )
+    mycursor = mydb.cursor()
+    temp=""
+    mycursor.execute("SELECT * FROM list")
+    myresult = mycursor.fetchall()
+    mycursor.execute("SELECT * FROM user_table")
+    result = mycursor.fetchall()
+    mycursor.close()
+    mydb.close()
+    print(result[0][0])
+    return render(request, 'info.html', {'info1':list(myresult),'info2':result})

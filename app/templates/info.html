@@ -1,0 +1,14 @@
+{% block page_content %}
+<h1>System:</h1><br>
+{% for i in info1%}
+{% for j in i%} 
+{{j}}&nbsp&nbsp
+{% endfor %}<br>
+{% endfor %}
+<h1>User:</h1><br>
+{% for i in info2%}
+{% for j in i%} 
+{{j}}&nbsp&nbsp
+{% endfor %}<br>
+{% endfor %}
+{% endblock %}
